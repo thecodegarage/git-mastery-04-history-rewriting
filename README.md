@@ -62,7 +62,7 @@ chmod +x build-history.sh
 ```
 
 This script creates:
-- **~40 commits** with intentional mistakes
+- **~10 commits** with intentional mistakes
 - **Multiple branches** with issues to fix
 - **Realistic scenarios** requiring history rewriting
 
