@@ -68,6 +68,8 @@ This script creates:
 
 **Takes ~15 seconds to complete.**
 
+**Need to start over?** Just run `./build-history.sh` again and type `y` to reset everything!
+
 ### 2. Verify Repository Setup
 
 ```bash
