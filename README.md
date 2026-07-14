@@ -193,18 +193,31 @@ git reset --hard HEAD@{1}
 - Filter Operations: 2-3 hours
 - Recovery: 1 hour
 
-## 🔄 Reset & Practice Again
+## �️ Reset Instructions
 
-Want to start over?
+### Start an Exercise Over
 
 ```bash
-# Delete and re-run script
-rm -rf src/
-git checkout master
-git branch | grep -v "^\*" | grep -v "master" | xargs -r git branch -D
-./build-history.sh
+# Return to clean state
+git checkout main
+git reset --hard HEAD
 
-# Or re-clone
+# Clean untracked files if needed
+git clean -fd
+```
+
+### Reset Entire Repository
+
+**Easiest way:** Just re-run the setup script!
+
+```bash
+./build-history.sh
+# Type 'y' when prompted to delete and rebuild
+```
+
+**Alternative:** Re-clone from scratch
+
+```bash
 cd ..
 rm -rf git-mastery-04-history-rewriting
 git clone https://github.com/TheCodeGarage/git-mastery-04-history-rewriting
