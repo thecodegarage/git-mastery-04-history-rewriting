@@ -329,7 +329,7 @@ ERROR: Connection failed
 DEBUG: Retrying...
 WARNING: Slow query detected
 EOF
-git add debug.log
+git add -f debug.log
 git commit -m "Add debug output"
 
 # Commit 15: Wishlist
