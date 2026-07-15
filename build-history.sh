@@ -13,6 +13,7 @@ if [ -d "src" ]; then
     read -n 1 -r
     echo
     [[ ! $REPLY =~ ^[Yy]$ ]] && echo "Aborting." && exit 1
+    git reset --hard HEAD
     rm -rf src/
     git branch | grep -v "^\*" | grep -v "master" | xargs -r git branch -D 2>/dev/null || true
 fi
