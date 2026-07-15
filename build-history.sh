@@ -13,9 +13,12 @@ if [ -d "src" ]; then
     read -n 1 -r
     echo
     [[ ! $REPLY =~ ^[Yy]$ ]] && echo "Aborting." && exit 1
-    git reset --hard HEAD
-    rm -rf src/
+    echo -e "${BLUE}🧹 Cleaning up existing practice environment...${NC}"
+    git reset --hard origin/master 2>/dev/null || git reset --hard HEAD~20 2>/dev/null || true
     git branch | grep -v "^\*" | grep -v "master" | xargs -r git branch -D 2>/dev/null || true
+    rm -rf src/
+    echo -e "${GREEN}✅ Cleanup complete${NC}"
+    echo ""
 fi
 
 echo -e "${BLUE}📁 Creating project structure...${NC}"
